@@ -1,0 +1,21 @@
+{
+  "name": "dotnet-api-generator",
+  "version": "1.0.0",
+  "description": "A tool I personally use when I want to get a .NET API boilerplate",
+  "main": "generate-api.js",
+  "scripts": {
+    "start": "node generate-api.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    ".net",
+    "api",
+    "template",
+    "generator"
+  ],
+  "author": "bullishvince",
+  "license": "ISC",
+  "devDependencies": {
+    "yargs": "^17.3.1"
+  }
+}
