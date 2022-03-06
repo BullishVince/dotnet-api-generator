@@ -5,7 +5,8 @@
   "main": "generate-api.js",
   "scripts": {
     "start": "node generate-api.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc scripts/testscript.ts --outDir out"
   },
   "keywords": [
     ".net",
@@ -16,6 +17,7 @@
   "author": "bullishvince",
   "license": "ISC",
   "devDependencies": {
+    "typescript": "^4.6.2",
     "yargs": "^17.3.1"
   }
 }
