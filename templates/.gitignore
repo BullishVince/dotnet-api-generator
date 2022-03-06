@@ -1,0 +1,7 @@
+**obj**
+**/bin/**
+**.ignore**
+.vscode**
+.vs**
+**Api/Properties*
+**appsettings.local.json
