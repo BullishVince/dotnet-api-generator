@@ -10,7 +10,7 @@ public class InformationController : ControllerBase
     private readonly ILogger<InformationController> _logger;
     private readonly IInformationService _informationService;
 
-    public LocalDataController(
+    public InformationController(
         ILogger<LocalDataController> logger, 
         IInformationService informationService
         )
