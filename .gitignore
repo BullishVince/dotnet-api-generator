@@ -1,1 +1,4 @@
 node_modules/**
+
+#Exclude directories I use locally for testing
+.testing/** 
