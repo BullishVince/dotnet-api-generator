@@ -1,5 +1,6 @@
 const fs =  require('fs');
 const {execSync} = require('child_process');
+const process = require('process');
 
 module.exports = {
     createRootDirectory: async function(directory, dotnetVersion) {
@@ -11,7 +12,7 @@ module.exports = {
                     console.log(`Copying template to ${directory}`);
                     execSync(`cp -rf templates/${dotnetVersion}.0/Api ${directory}`);
                     console.log(`Navigating to ${directory}`);
-                    execSync(`cd ${directory}`);
+                    process.chdir(`${directory}`)
                 } catch (err) {
                     console.log(`Could not copy template to ${directory}`);
                     reject();
@@ -25,14 +26,13 @@ module.exports = {
         })
     },
     
-    replaceVariablesInTemplate: async function(applicationName, directory) {
+    replaceVariablesInTemplate: async function(applicationName) {
         return new Promise((resolve, reject) => {
-            //Replace variables in all projects (Api, Data, Tests etc...)
+            //TODD: Replace variables in all projects (Api, Data, Tests etc...)
             try {
                 console.log('Replacing variables in Api/');
-                // execSync(`find Api -type f -exec sed -i -e 's/\${applicationName}/${applicationName}/g' {} \;`)
-                execSync(`cd ${directory} && find Api -type f -exec sed -i '' -e 's/\${applicationName}/hej/g' {} \\;`);
-                execSync(`cd ${directory} && mv Api/application.csproj Api/${applicationName}.api.csproj`);
+                execSync(`find Api -type f -exec sed -i '' -e 's/\${applicationName}/${applicationName}/g' {} \\;`);
+                execSync(`mv Api/application.csproj Api/${applicationName}.api.csproj`);
                 resolve();
             } catch (err) {
                 console.log('Could not replace variables in Api/');

@@ -29,7 +29,7 @@ async function main() {
   try {
     const directory = `.testing/${argv.name}`;
     await intializeApi.createRootDirectory(directory, argv.dotnet);
-    await intializeApi.replaceVariablesInTemplate(`${argv.name}`, directory);
+    await intializeApi.replaceVariablesInTemplate(`${argv.name}`);
   } catch (err) {
     console.log(err);
   }
