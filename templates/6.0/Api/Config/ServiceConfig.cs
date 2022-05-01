@@ -8,7 +8,7 @@ public static class ServiceBootstrapper {
         //services.AddTransient<IDummyAdapter>(s => new DummyAdapter(string.Empty));
         
         //Add scoped service below
-        //services.AddScoped<IDummyService, DummyService>();
+        services.AddScoped<IInformationService, InformationService>();
         return services;
     }
 }
