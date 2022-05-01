@@ -11,7 +11,7 @@ public class InformationController : ControllerBase
     private readonly IInformationService _informationService;
 
     public InformationController(
-        ILogger<LocalDataController> logger, 
+        ILogger<InformationController> logger, 
         IInformationService informationService
         )
     {

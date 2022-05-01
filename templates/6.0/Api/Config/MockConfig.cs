@@ -1,5 +1,5 @@
 using Serilog;
-using Api.Config.Mocks;
+using ${applicationName}.Api.Config.Mocks;
 
 namespace ${applicationName}.Api.Config;
 public static class MockConfig {
@@ -8,7 +8,7 @@ public static class MockConfig {
         Log.Information("Initiating mocks");
 
         //Add mocks below
-        services.AddSingleton(DummyServiceMock.Get());
+        services.AddSingleton(InformationServiceMock.Get());
     }
     return services;
     }
